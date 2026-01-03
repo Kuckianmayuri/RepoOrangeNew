@@ -6,6 +6,7 @@
       <class name="com.crm.testscripts.CreateEmployeeTest">
         <methods>
           <include name="login"/>
+          <include name="logoutFromApp"/>
           <include name="closeBrowser"/>
           <include name="addEmployeeUsingAddButton"/>
           <include name="launchBrowser"/>

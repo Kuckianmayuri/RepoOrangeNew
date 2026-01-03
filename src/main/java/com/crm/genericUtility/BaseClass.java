@@ -19,7 +19,7 @@ public class BaseClass {
 	public FileUtility futil = new FileUtility();
 	public WebDriverUtility wUtil = new WebDriverUtility();
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void launchBrowser() throws Exception {
 		ChromeOptions options = new ChromeOptions();
 
@@ -33,19 +33,19 @@ public class BaseClass {
 		wUtil.waitForPageLoad(driver);
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void login() throws Exception {
 		LoginPage lp = new LoginPage(driver);
 		lp.login(futil.readDataFromProperty("username"), futil.readDataFromProperty("password"));
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void logoutFromApp() {
 		HomePage hp = new HomePage(driver);
 		hp.logout();
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void closeBrowser() {
 		driver.quit();
 	}

@@ -46,5 +46,10 @@
     <artifactId>testng</artifactId>
     <version>7.10.2</version>
 </dependency>
+  	<dependency>
+  		<groupId>Qspider</groupId>
+  		<artifactId>Selenium</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies> 
 </project>

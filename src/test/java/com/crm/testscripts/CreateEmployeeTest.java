@@ -1,5 +1,7 @@
 package com.crm.testscripts;
 
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.genericUtility.BaseClass;
@@ -9,11 +11,10 @@ import com.crm.objectRepository.AddEmployeePage;
 import com.crm.objectRepository.EmployeeListPage;
 import com.crm.objectRepository.HomePage;
 
-import junit.framework.Assert;
-
+@Listeners(listeners.Listener.class)
 public class CreateEmployeeTest extends BaseClass {
 
-	@Test(groups = "smoke")
+	@Test(groups = {"smoke"})
 	public void addEmployeeUsingAddButton() throws Exception {
 		ExcelUtility eUtil = new ExcelUtility();
 		JavaUtility jUtil = new JavaUtility();
