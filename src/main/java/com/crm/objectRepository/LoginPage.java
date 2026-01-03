@@ -1,12 +1,13 @@
 package com.crm.objectRepository;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.crm.genericUtility.WebDriverUtility;
+
 public class LoginPage {
 	WebDriver driver;
+	WebDriverUtility wUtil = new WebDriverUtility();
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -18,7 +19,7 @@ public class LoginPage {
 
 	public void login(String user, String passWd) {
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		wUtil.waitForPageLoad(driver);
 		driver.findElement(username).sendKeys(user);
 		driver.findElement(password).sendKeys(passWd);
 		driver.findElement(loginBtn).click();

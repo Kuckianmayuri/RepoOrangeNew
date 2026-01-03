@@ -7,9 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import com.crm.objectRepository.HomePage;
 import com.crm.objectRepository.LoginPage;
 
 public class BaseClass {
@@ -35,6 +37,12 @@ public class BaseClass {
 	public void login() throws Exception {
 		LoginPage lp = new LoginPage(driver);
 		lp.login(futil.readDataFromProperty("username"), futil.readDataFromProperty("password"));
+	}
+
+	@AfterMethod
+	public void logoutFromApp() {
+		HomePage hp = new HomePage(driver);
+		hp.logout();
 	}
 
 	@AfterClass

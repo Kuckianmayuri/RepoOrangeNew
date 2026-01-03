@@ -10,9 +10,12 @@ public class HomePage {
 		this.driver = driver;
 	}
 
-	By pimMenu = By.xpath("//span[text()='PIM']");
 	By addEmployeeTab = By.xpath("//a[text()='Add Employee']");
 	By addBtn = By.xpath("//button[normalize-space()='Add']");
+
+	private By pimMenu = By.xpath("//span[text()='PIM']");
+	private By profileIcon = By.xpath("//p[@class='oxd-userdropdown-name']");
+	private By logoutLink = By.xpath("//a[text()='Logout']");
 
 	public void clickPIM() {
 		driver.findElement(pimMenu).click();
@@ -21,9 +24,14 @@ public class HomePage {
 	public void clickAddEmployeeTab() {
 		driver.findElement(addEmployeeTab).click();
 	}
-	
+
 	public void clickAddEmployeeBtn() {
 		driver.findElement(addBtn).click();
 	}
-	
+
+	public void logout() {
+		driver.findElement(profileIcon).click();
+		driver.findElement(logoutLink).click();
+	}
+
 }

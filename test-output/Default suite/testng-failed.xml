@@ -7,7 +7,7 @@
         <methods>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="addEmployeeFromEmployeeTab"/>
+          <include name="addEmployeeUsingAddButton"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- com.crm.testscripts.CreateEmployeeTest -->

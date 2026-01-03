@@ -3,14 +3,16 @@ package com.crm.objectRepository;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.crm.genericUtility.WebDriverUtility;
+
 public class AddEmployeePage {
 	WebDriver driver;
+	WebDriverUtility wUtil = new WebDriverUtility();
 
 	public AddEmployeePage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	
 	By firstName = By.name("firstName");
 	By lastName = By.name("lastName");
 	By saveBtn = By.xpath("//button[@type='submit']");
