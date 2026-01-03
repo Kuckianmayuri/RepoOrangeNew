@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM smoke Suite">
+	<test name="Smoke Test">
+		<groups>
+			<run>
+				<include name="smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.crm.testscripts.CreateEmployeeTest" />
+		</classes>
+	</test>
+</suite>

@@ -13,7 +13,7 @@ import junit.framework.Assert;
 
 public class CreateEmployeeTest extends BaseClass {
 
-	@Test
+	@Test(groups = "smoke")
 	public void addEmployeeUsingAddButton() throws Exception {
 		ExcelUtility eUtil = new ExcelUtility();
 		JavaUtility jUtil = new JavaUtility();
@@ -36,7 +36,7 @@ public class CreateEmployeeTest extends BaseClass {
 		Assert.assertTrue(list.searchEmployee(fn));
 	}
 
-	@Test
+	@Test(groups = "regression")
 	public void addEmployeeFromEmployeeTab() throws Exception {
 		ExcelUtility eUtil = new ExcelUtility();
 		JavaUtility jUtil = new JavaUtility();
