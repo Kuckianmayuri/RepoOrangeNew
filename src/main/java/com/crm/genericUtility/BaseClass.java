@@ -16,6 +16,7 @@ import com.crm.objectRepository.LoginPage;
 
 public class BaseClass {
 	public WebDriver driver;
+	public static WebDriver sdriver; 
 	public FileUtility futil = new FileUtility();
 	public WebDriverUtility wUtil = new WebDriverUtility();
 
