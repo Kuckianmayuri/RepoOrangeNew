@@ -14,6 +14,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.crm.genericUtility.BaseClass;
 
 import config.baseClass;
 
@@ -48,6 +49,7 @@ public class Listener implements ITestListener {
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		test = extent.createTest(result.getMethod().getMethodName());
+		test.log(Status.INFO, "Browser : " + BaseClass.browserName.get());
 		test.log(Status.INFO, "====" + result.getMethod().getMethodName() + " Exceution started");
 	}
 
