@@ -14,7 +14,7 @@ import com.crm.objectRepository.HomePage;
 @Listeners(listeners.Listener.class)
 public class CreateEmployeeTest extends BaseClass {
 
-	@Test(groups = {"smoke"})
+	@Test(priority = 1, groups = {"smoke"}, invocationCount = 2)
 	public void addEmployeeUsingAddButton() throws Exception {
 		ExcelUtility eUtil = new ExcelUtility();
 		JavaUtility jUtil = new JavaUtility();
@@ -37,7 +37,7 @@ public class CreateEmployeeTest extends BaseClass {
 		Assert.assertTrue(list.searchEmployee(fn));
 	}
 
-	@Test(groups = "regression")
+	@Test(groups = "regression", dependsOnMethods = "addEmployeeUsingAddButton")
 	public void addEmployeeFromEmployeeTab() throws Exception {
 		ExcelUtility eUtil = new ExcelUtility();
 		JavaUtility jUtil = new JavaUtility();
